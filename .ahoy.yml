@@ -5,25 +5,25 @@ commands:
     cmd : |
       docker stop jekyll
       docker rm jekyll
-      docker run -it -v `pwd`:/usr/app/src --name=jekyll jekyll-dev new
+      docker run -it -v `pwd`:/usr/app/src --name=jekyll msound/jekyll-dev new
   serve:
     usage: Serve Jekyll site
     cmd: |
       docker stop jekyll
       docker rm jekyll
-      docker run -it -v `pwd`:/usr/app/src -p 4000:4000 --name=jekyll jekyll-dev serve
+      docker run -it -v `pwd`:/usr/app/src -p 4000:4000 --name=jekyll msound/jekyll-dev serve
   build:
     usage: Build Jekyll site
     cmd: |
       docker stop jekyll
       docker rm jekyll
-      docker run -it -v `pwd`:/usr/app/src --name=jekyll jekyll-dev build
+      docker run -it -v `pwd`:/usr/app/src --name=jekyll msound/jekyll-dev build
   sh:
     usage: Shell into Jekyll container
     cmd: |
       docker stop jekyll
       docker rm jekyll
-      docker run -it -v `pwd`:/usr/app/src --name=jekyll jekyll-dev sh
+      docker run -it -v `pwd`:/usr/app/src --name=jekyll msound/jekyll-dev sh
   clean:
     usage: Clean up Jekyll containers
     cmd: |
