@@ -2,10 +2,17 @@ FROM ruby:2.3
 
 MAINTAINER Mani Soundararajan <mani.sound@gmail.com>
 
-RUN gem install --no-document github-pages -v 112
+COPY resources/Gemfile /internal/
+
+WORKDIR /internal
+
+RUN bundle install
+
+COPY resources/jekyll-dev.sh /internal/
 
 VOLUME ['/usr/app/src']
-WORKDIR /usr/app/src
 
 EXPOSE 4000
-CMD [ "jekyll", "serve", "--watch", "--drafts", "--host", "0.0.0.0", "--port", "4000" ]
+
+ENTRYPOINT ["/internal/jekyll-dev.sh"]
+CMD [ "serve" ]
