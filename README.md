@@ -9,7 +9,7 @@ To start a new Jekyll site, lets call it `example`, run the following commands:
 ```bash
 mkdir example
 cd example
-docker run -it -v `pwd`:/usr/app/src jekyll-dev new
+docker run -it -v `pwd`:/usr/app/src msound/jekyll-dev new
 ```
 
 ## Development
@@ -17,7 +17,7 @@ docker run -it -v `pwd`:/usr/app/src jekyll-dev new
 As you write content, to preview it locally, you can use Jekyll's built-in server:
 
 ```bash
-docker run -it -v `pwd`:/usr/app/src -p 4000:4000 jekyll-dev serve
+docker run -it -v `pwd`:/usr/app/src -p 4000:4000 msound/jekyll-dev serve
 ```
 
 ## Build
@@ -25,7 +25,7 @@ docker run -it -v `pwd`:/usr/app/src -p 4000:4000 jekyll-dev serve
 To build your Jekyll site, run the following command:
 
 ```bash
-docker run -it -v `pwd`:/usr/app/src jekyll-dev build
+docker run -it -v `pwd`:/usr/app/src msound/jekyll-dev build
 ```
 
 ## Bash
@@ -33,7 +33,7 @@ docker run -it -v `pwd`:/usr/app/src jekyll-dev build
 To drop into a bash shell inside your docker container:
 
 ```bash
-docker run -it -v `pwd`:/usr/app/src jekyll-dev sh
+docker run -it -v `pwd`:/usr/app/src msound/jekyll-dev sh
 ```
 
 ## Ahoy
